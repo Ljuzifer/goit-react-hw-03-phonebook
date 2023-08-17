@@ -7,6 +7,7 @@ export const Search = styled.div`
     width: 400px;
     padding: 2px 13px;
     border-radius: 13px;
+    text-align: center;
   }
 
   ::placeholder {
