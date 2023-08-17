@@ -1,10 +1,9 @@
-// import { PiArmchairBold } from 'react-icons/pi';
+import { HiMicrophone } from 'react-icons/hi';
 
 export const ContactItem = ({ details: { name, number, id }, onDelete }) => {
   return (
     <>
-      {/* <PiArmchairBold /> */}
-
+      <HiMicrophone />
       <span>{name}</span>
       <div>
         <span>{number} </span>
