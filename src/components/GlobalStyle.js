@@ -60,4 +60,9 @@ export const Box = styled.div`
     margin: auto;
     margin-bottom: 28px;
   }
+
+  b {
+    color: midnightblue;
+    font-size: 15px;
+  }
 `;

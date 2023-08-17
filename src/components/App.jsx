@@ -3,6 +3,7 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import { GlobalStyle, Box } from './GlobalStyle';
+import { Message } from './Message/Message';
 
 const LOCAL_STORAGE_KEY = 'contacts-list';
 
@@ -68,6 +69,7 @@ export class App extends Component {
     const filteredContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
+    const contactsLength = this.state.contacts.length;
 
     return (
       <Box>
@@ -76,10 +78,14 @@ export class App extends Component {
 
         <h2>Contacts</h2>
         <Filter nameFilter={filter} onChange={this.handleChangeFilter} />
-        <ContactList
-          contacts={filteredContacts}
-          contactDelete={this.handleContactDelete}
-        />
+        {contactsLength === 0 ? (
+          <Message message="Oops! Contact's list is empty" />
+        ) : (
+          <ContactList
+            contacts={filteredContacts}
+            contactDelete={this.handleContactDelete}
+          />
+        )}
 
         <GlobalStyle />
       </Box>
