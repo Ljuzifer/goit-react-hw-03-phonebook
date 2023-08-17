@@ -4,17 +4,31 @@ import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import { GlobalStyle, Box } from './GlobalStyle';
 
+const LOCAL_STORAGE_KEY = 'contacts-list';
+
 export class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-      { id: 'id-5', name: 'Dimon Oleksenko', number: '666-66-66' },
-    ],
+    contacts: [],
     filter: '',
   };
+
+  componentDidMount() {
+    const savedContacts = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const parsedContacts = JSON.parse(savedContacts);
+
+    if (parsedContacts !== null) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const nextContacts = this.state.contacts;
+    const prevContacts = prevState.contacts;
+
+    if (nextContacts !== prevContacts) {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(nextContacts));
+    }
+  }
 
   handleAddContact = newContact => {
     const enteredName = newContact.name;

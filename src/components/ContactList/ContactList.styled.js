@@ -1,26 +1,28 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  width: 400px;
+  width: 555px;
   display: flex;
   flex-direction: column;
   gap: 13px;
   margin: auto;
   font-weight: 500;
-  font-style: oblique;
+  /* font-style: oblique; */
 
   li {
     display: flex;
-    color: midnightblue;
+    color: black;
 
-    span:first-child {
+    span {
       font-size: 18px;
       font-weight: 700;
-      font-style: normal;
+      margin-left: 13px;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
         'Lucida Sans', Arial, sans-serif;
       margin-right: auto;
-      color: black;
+    }
+    div span {
+      color: whitesmoke;
     }
 
     button {
