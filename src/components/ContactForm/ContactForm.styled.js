@@ -8,6 +8,10 @@ export const FormThumb = styled(Form)`
   /* justify-content: space-between; */
   width: 400px;
   margin: auto;
+  border: 4px solid black;
+  border-radius: 13px;
+  padding: 20px 28px;
+  margin-bottom: 28px;
 
   button {
     font-weight: bold;

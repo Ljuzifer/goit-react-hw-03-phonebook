@@ -79,7 +79,7 @@ export class App extends Component {
         <h2>Contacts</h2>
         <Filter nameFilter={filter} onChange={this.handleChangeFilter} />
         {contactsLength === 0 ? (
-          <Message message="Oops! Contact's list is empty" />
+          <Message message="Oops! Contact's list is empty..." />
         ) : (
           <ContactList
             contacts={filteredContacts}
