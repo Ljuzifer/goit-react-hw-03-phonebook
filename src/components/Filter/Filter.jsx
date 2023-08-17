@@ -7,6 +7,7 @@ export const Filter = ({ nameFilter, onChange }) => {
         type="text"
         value={nameFilter}
         onChange={e => onChange(e.target.value)}
+        placeholder='Search...'
       />
     </Search>
   );
